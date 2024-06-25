@@ -1,13 +1,22 @@
+.characters_and_favourites {
+    display: flex;
+    justify-content: space-around;
+}
+
+.characters_section {
+    max-width: 60vw;
+}
+
+.characters_title, .favourites_title {
+    color: blue;
+    text-align: center;
+}
+
 .characters_cards {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-}
-
-.characters_title {
-    color: blue;
-    text-align: center;
 }
 
 .characters_card {
@@ -45,3 +54,4 @@
     color: #333;
     background-color: #fafafa;
 }
+
