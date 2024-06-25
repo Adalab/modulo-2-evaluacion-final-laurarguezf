@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluación final JS</title>
     
-  <link rel="stylesheet" href="./assets/index-c879d4b2.css">
+  <link rel="stylesheet" href="./assets/index-97ce8f34.css">
 </head>
 <body>
 
     <header></header>
     <main>
 
-        <form action="">
-            <input type="text" placeholder="Example: Olu Mei">
-            <button>Search</button>
+        <form>
+            <label for="character">
+                Nombre del personaje Disney:
+                <input class="js_characterInput" type="text" name="character" id="character" placeholder="Example: Olu Mei">
+            </label>
+            <input class="js_searchButton" type="submit" value="Search">
         </form>
         <div class="characters_and_favourites">
             
@@ -26,6 +29,7 @@
 
             <section class="favourites_section">
                 <h1 class="favourites_title">Favourites</h1>
+                <div class="js_favourites-container"></div>
             </section>
         </div>
     </main>
