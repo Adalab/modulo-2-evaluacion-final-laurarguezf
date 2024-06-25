@@ -76,9 +76,9 @@ function handleClickCard(ev) {
     const clickedCard = data.find(eachCard => eachCard._id === clickedCardId);
     console.log(clickedCard);
 
-    const clickedFavouriteIndex = favourites.find( eachFavourite => eachFavourite._id === clickedCardId);   
+    const clickedFavouriteIndex = favourites.findIndex( eachFavourite => eachFavourite._id === clickedCardId);   
 
-    if (clickedFavouriteIndex === undefined) {
+    if (clickedFavouriteIndex === -1) {
         favourites.push(clickedCard);
         renderFavourites();
     }
