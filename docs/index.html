@@ -5,33 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluación final JS</title>
     
-  <link rel="stylesheet" href="./assets/index-97ce8f34.css">
+  <link rel="stylesheet" href="./assets/index-5d2c73f6.css">
 </head>
 <body>
 
-    <header></header>
-    <main>
+    <header class="header">
+    </header>
 
-        <form>
-            <label for="character">
-                Nombre del personaje Disney:
-                <input class="js_characterInput" type="text" name="character" id="character" placeholder="Example: Olu Mei">
+    <main class="main">
+
+        <form class="search-form">
+            <label for="character" class="search-label">
+                Disney character name:
+                <input class="character-input js_characterInput" type="text" name="character" id="character" placeholder="Example: Amos">
             </label>
-            <input class="js_searchButton" type="submit" value="Search">
+            <input class="search-button js_searchButton" type="submit" value="Search">
+            <button class="reset-button js_resetButton">Reset Search</button>
         </form>
+
         <div class="characters_and_favourites">
-            
             <section class="characters_section">
                 <h1 class="characters_title">Characters</h1>
                 <div class="characters_cards js_cards-container">
                 </div>       
             </section>
-
             <section class="favourites_section">
                 <h1 class="favourites_title">Favourites</h1>
-                <div class="js_favourites-container"></div>
+                <button class="clear-button js_clearButton">Clear All Favourites</button>
+                <div class="characters_cards js_favourites-container"></div>
             </section>
         </div>
+
     </main>
     
 
