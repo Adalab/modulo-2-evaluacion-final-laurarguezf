@@ -1,5 +1,6 @@
 'use strict';
 
+
 // QUERY SELECTOR
 
 const cardsContainer = document.querySelector('.js_cards-container');
@@ -9,14 +10,15 @@ const characterInput = document.querySelector('.js_characterInput');
 const clearFavouritesButton = document.querySelector('.js_clearButton');
 const resetSearchButton = document.querySelector('.js_resetButton');
 
+
 // DATOS
 
 let data = [];
 let favourites = [];
 const placeholderImgURL = 'https://via.placeholder.com/210x295/ffffff/555555/?text=Disney';
 
-// FUNCIONES
 
+// FUNCIONES
 
 function createArticleForCharacter(oneCharacter) {
     //Función para crear el HTML de cada tarjeta de personaje
@@ -28,7 +30,6 @@ function createArticleForCharacter(oneCharacter) {
                  </article>`;
     return html;   
 }
-
 
 function renderCharacters() {
     //Función para renderizar los personajes en la sección de personajes
@@ -47,7 +48,6 @@ function renderCharacters() {
         eachCard.addEventListener( 'click', handleClickCard );
     };
 }
-
 
 function renderFavourites() {
     //Función para renderizar los favoritos
@@ -82,6 +82,7 @@ function addFavouriteBackgroundColor() {
              };
         }
 }
+
 
 // FUNCIONES DE EVENTOS (HANDLER)
 
@@ -150,6 +151,7 @@ function handleClickResetSearch(ev) {
         });
 };
 
+
 // EVENTOS
 
 searchButton.addEventListener( 'click', handleClickSearch);
@@ -174,5 +176,4 @@ if (favouritesFromLocalStorage !== null) {
     favourites = favouritesFromLocalStorage;
 
     renderFavourites();
-    addFavouriteBackgroundColor();
-}
+};
