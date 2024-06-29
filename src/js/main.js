@@ -9,6 +9,7 @@ const searchButton = document.querySelector('.js_searchButton');
 const characterInput = document.querySelector('.js_characterInput');
 const clearFavouritesButton = document.querySelector('.js_clearButton');
 const resetSearchButton = document.querySelector('.js_resetButton');
+const logButton = document.querySelector('.js_logButton');
 
 
 // DATOS
@@ -16,17 +17,23 @@ const resetSearchButton = document.querySelector('.js_resetButton');
 let data = [];
 let favourites = [];
 const placeholderImgURL = 'https://via.placeholder.com/210x295/ffffff/555555/?text=Disney';
+const peliculas = 'Doesnt appear in any movie';
 
 
 // FUNCIONES
 
 function createArticleForCharacter(oneCharacter) {
     //Función para crear el HTML de cada tarjeta de personaje
+    const numPeliculas = oneCharacter.films.length;
+    console.log(numPeliculas);
+
+
     const html = `<article class="characters_card js_characters_card" data-id="${oneCharacter._id}">
                     <div class="card_img_container">
                         <img class="card_img" src=${oneCharacter.imageUrl ? oneCharacter.imageUrl : placeholderImgURL} alt="">
                     </div>
                     <h2 class="card_text">${oneCharacter.name}</h2>
+                    <p>${(oneCharacter.films.length === 0) ? peliculas : oneCharacter.films.length}</p>
                  </article>`;
     return html;   
 }
@@ -151,12 +158,18 @@ function handleClickResetSearch(ev) {
         });
 };
 
+function handleClickLog(ev) {
+    ev.preventDefault();
+    console.log(`Tienes ${favourites.length} favoritos`);
+}
+
 
 // EVENTOS
 
 searchButton.addEventListener( 'click', handleClickSearch);
 clearFavouritesButton.addEventListener( 'click', handleClickClearAllFavourites);
 resetSearchButton.addEventListener( 'click', handleClickResetSearch);
+logButton.addEventListener( 'click' , handleClickLog);
 
 
 // CÓDIGO CUANDO CARGA LA PÁGINA
